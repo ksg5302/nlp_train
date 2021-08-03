@@ -97,9 +97,9 @@ def enc_processing(data, dictionary, tokenize_as_morph=False):
         sequence_index = []
         for word in sentence.split():
             if dictionary.get(word) is not None: #key error 방지
-                sequence_index.append([dictionary[word]])
+                sequence_index.append(dictionary[word])
             else:
-                sequence_index.append([dictionary[UNK]])
+                sequence_index.append(dictionary[UNK])
 
         if len(sequence_index) > MAX_SEQUENCE:
             sequence_index = sequence_index[:MAX_SEQUENCE]
